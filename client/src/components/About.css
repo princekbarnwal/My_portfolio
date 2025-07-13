@@ -509,19 +509,38 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 5rem 0;
+    padding: 4rem 0;
+  }
+  
+  .about-container {
+    padding: 0 1rem;
   }
   
   .section-title {
     font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-content {
+    gap: 2rem;
   }
   
   .intro-title {
     font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
   
   .intro-badges {
     gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .intro-badge {
@@ -531,44 +550,157 @@
   
   .about-stats {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1.25rem;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
   }
   
   .profile-card {
     padding: 1.5rem 1rem;
+    margin: 0 auto;
+    max-width: 350px;
   }
   
   .avatar-image {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .profile-info h4 {
+    font-size: 1.3rem;
+  }
+  
+  .profile-title {
+    font-size: 0.9rem;
+  }
+  
+  .profile-subtitle {
+    font-size: 0.8rem;
   }
   
   .expertise-item {
     padding: 1rem;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
+  .expertise-content h5 {
+    font-size: 1.1rem;
+  }
+  
+  .expertise-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
   
   .links-grid {
     flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .platform-link {
+    justify-content: center;
+    padding: 0.5rem 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  .about {
+    padding: 3rem 0;
+  }
+  
+  .about-container {
+    padding: 0 0.75rem;
+  }
+  
   .section-title {
     font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
   
   .intro-title {
     font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  
+  .intro-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-badges {
+    gap: 0.4rem;
+  }
+  
+  .intro-badge {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
   }
   
   .expertise-item {
     padding: 0.875rem;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  
+  .expertise-content h5 {
+    font-size: 1rem;
+  }
+  
+  .expertise-content p {
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
   
   .profile-card {
     padding: 1.25rem 0.875rem;
+    max-width: 300px;
+  }
+  
+  .avatar-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .profile-info h4 {
+    font-size: 1.2rem;
+  }
+  
+  .profile-title {
+    font-size: 0.85rem;
+  }
+  
+  .profile-subtitle {
+    font-size: 0.75rem;
   }
   
   .stat-card {
     padding: 1rem 0.75rem;
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .platform-link {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
   }
 } 

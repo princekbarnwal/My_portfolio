@@ -28,7 +28,7 @@ const Projects = ({ darkMode }) => {
       technologies: ['React.js', 'CSS3', 'JavaScript', 'HTML5', 'Responsive Design'],
       image: portfolioImg,
       github: 'https://github.com/princekbarnwal/My_portfolio',
-      live: 'https://princekbarnwal-portfolio.vercel.app/',
+      live: 'https://princekbarnwal.vercel.app/',
       features: [
         'Dark/Light mode toggle',
         'Responsive design for all devices',
