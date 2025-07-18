@@ -47,7 +47,7 @@ const Projects = ({ darkMode }) => {
       technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'REST API'],
       image: pokemonImg,
       github: 'https://github.com/princekbarnwal/Pokemon_webapp',
-      live: 'https://pokemonwebapp-indol.vercel.app/',
+      live: 'https://pokemonwebapp-princekbarnwal.vercel.app/',
       features: [
         'Pokémon search and filtering',
         'Detailed Pokémon information',
