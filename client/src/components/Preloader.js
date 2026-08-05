@@ -13,14 +13,16 @@ import './Preloader.css';
  * - Smooth transitions and animations
  * - Calls onComplete when loading finishes
  */
+
+// Constants moved outside component — they never change so don't need to be dependencies
+const radius = 120;
+const centerX = 150;
+const centerY = 150;
+const totalCharacters = 21;
+const name = " Prince Kumar Barnwal ";
+const repeatedName = name.repeat(Math.ceil(totalCharacters / name.length)).slice(0, totalCharacters);
+
 const Preloader = ({ onComplete }) => {
-  // Create circular text pattern - moved to top to avoid initialization issues
-  const radius = 120;
-  const centerX = 150;
-  const centerY = 150;
-  const totalCharacters = 21; // Number of characters to display
-  const name = " Prince Kumar Barnwal ";
-  const repeatedName = name.repeat(Math.ceil(totalCharacters / name.length)).slice(0, totalCharacters);
 
   // State for tracking loading progress (0-100)
   const [progress, setProgress] = useState(0);

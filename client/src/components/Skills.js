@@ -12,42 +12,41 @@ import './Skills.css';
  * - Professional micro-interactions
  * - Responsive design with touch support
  */
+
+// Moved outside component — static data, never changes, so not a dependency
+const skillsData = {
+  frontend: [
+    { name: 'React.js', level: 90, icon: 'fab fa-react', color: '#61DAFB', description: 'Modern UI development' },
+    { name: 'JavaScript', level: 85, icon: 'fab fa-js-square', color: '#F7DF1E', description: 'ES6+ & modern features' },
+    { name: 'HTML5', level: 95, icon: 'fab fa-html5', color: '#E34F26', description: 'Semantic markup' },
+    { name: 'CSS3', level: 88, icon: 'fab fa-css3-alt', color: '#1572B6', description: 'Advanced styling' },
+    { name: 'Bootstrap', level: 75, icon: 'fab fa-bootstrap', color: '#7952B3', description: 'Responsive frameworks' },
+    { name: 'TypeScript', level: 65, icon: 'fab fa-js', color: '#3178C6', description: 'Type-safe development' }
+  ],
+  backend: [
+    { name: 'Node.js', level: 85, icon: 'fab fa-node-js', color: '#339933', description: 'Server-side development' },
+    { name: 'Express.js', level: 78, icon: 'fas fa-server', color: '#000000', description: 'API development' },
+    { name: 'MongoDB', level: 78, icon: 'fas fa-database', color: '#47A248', description: 'NoSQL databases' },
+    { name: 'REST API', level: 75, icon: 'fas fa-link', color: '#FF6B6B', description: 'API design & integration' },
+    { name: 'Git', level: 80, icon: 'fab fa-git-alt', color: '#F05032', description: 'Version control' },
+    { name: 'PostgreSQL', level: 65, icon: 'fas fa-database', color: '#336791', description: 'Relational databases' }
+  ],
+  tools: [
+    { name: 'Linux', level: 75, icon: 'fab fa-linux', color: '#FCC624', description: 'System administration' },
+    { name: 'VS Code', level: 90, icon: 'fas fa-code', color: '#007ACC', description: 'Development environment' },
+    { name: 'GitHub', level: 88, icon: 'fab fa-github', color: '#6E5494', description: 'Code collaboration' },
+    { name: 'AWS', level: 68, icon: 'fab fa-aws', color: '#FF9900', description: 'Cloud services' },
+    { name: 'Docker', level: 65, icon: 'fab fa-docker', color: '#2496ED', description: 'Containerization' },
+    { name: 'Postman', level: 65, icon: 'fas fa-paper-plane', color: '#FF6C37', description: 'API testing' }
+  ]
+};
+
 const Skills = ({ darkMode }) => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [isVisible, setIsVisible] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [displayedSkills, setDisplayedSkills] = useState([]);
   const skillsRef = useRef(null);
-
-  // Enhanced skills data with more details and categories
-  const skillsData = {
-    frontend: [
-      { name: 'React.js', level: 90, icon: 'fab fa-react', color: '#61DAFB', description: 'Modern UI development' },
-      { name: 'JavaScript', level: 85, icon: 'fab fa-js-square', color: '#F7DF1E', description: 'ES6+ & modern features' },
-      { name: 'HTML5', level: 95, icon: 'fab fa-html5', color: '#E34F26', description: 'Semantic markup' },
-      { name: 'CSS3', level: 88, icon: 'fab fa-css3-alt', color: '#1572B6', description: 'Advanced styling' },
-      { name: 'Bootstrap', level: 75, icon: 'fab fa-bootstrap', color: '#7952B3', description: 'Responsive frameworks' },
-      { name: 'TypeScript', level: 65, icon: 'fab fa-js', color: '#3178C6', description: 'Type-safe development' }
-    ],
-    
-    backend: [
-      { name: 'Node.js', level: 85, icon: 'fab fa-node-js', color: '#339933', description: 'Server-side development' },
-      { name: 'Express.js', level: 78, icon: 'fas fa-server', color: '#000000', description: 'API development' },
-      { name: 'MongoDB', level: 78, icon: 'fas fa-database', color: '#47A248', description: 'NoSQL databases' },
-      { name: 'REST API', level: 75, icon: 'fas fa-link', color: '#FF6B6B', description: 'API design & integration' },
-      { name: 'Git', level: 80, icon: 'fab fa-git-alt', color: '#F05032', description: 'Version control' },
-      { name: 'PostgreSQL', level: 65, icon: 'fas fa-database', color: '#336791', description: 'Relational databases' }
-    ],
-    
-    tools: [
-      { name: 'Linux', level: 75, icon: 'fab fa-linux', color: '#FCC624', description: 'System administration' },
-      { name: 'VS Code', level: 90, icon: 'fas fa-code', color: '#007ACC', description: 'Development environment' },
-      { name: 'GitHub', level: 88, icon: 'fab fa-github', color: '#6E5494', description: 'Code collaboration' },
-      { name: 'AWS', level: 68, icon: 'fab fa-aws', color: '#FF9900', description: 'Cloud services' },
-      { name: 'Docker', level: 65, icon: 'fab fa-docker', color: '#2496ED', description: 'Containerization' },
-      { name: 'Postman', level: 65, icon: 'fas fa-paper-plane', color: '#FF6C37', description: 'API testing' }
-    ]
-  };
 
   // Categories for filtering
   const categories = [
