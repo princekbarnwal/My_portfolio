@@ -87,6 +87,14 @@ const Header = ({ darkMode, toggleDarkMode }) => {
             <li className="nav-item">
               <button 
                 className="nav-link nav-animated"
+                onClick={() => scrollToSection('experience')}
+              >
+                Experience
+              </button>
+            </li>
+            <li className="nav-item">
+              <button 
+                className="nav-link nav-animated"
                 onClick={() => scrollToSection('skills')}
               >
                 Skills

@@ -119,6 +119,15 @@ const Footer = ({ darkMode }) => {
               </li>
               <li>
                 <button 
+                  onClick={() => document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })}
+                  className="footer-link"
+                >
+                  <i className="fas fa-briefcase"></i>
+                  <span>Experience</span>
+                </button>
+              </li>
+              <li>
+                <button 
                   onClick={() => document.getElementById('skills').scrollIntoView({ behavior: 'smooth' })}
                   className="footer-link"
                 >

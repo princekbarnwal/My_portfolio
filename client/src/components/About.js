@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import profileImage from '../assets/DALL·E 2024-05-29 02.54.36 - AN PERSON , REPRESENTING A TECH GEEK AND A SPORTSPERSON WITH HIS SETUP  IN SPACE WORKING.png'; // Your profile image
+import profileImage from '../assets/image_1.png'; // Your profile image
 
 /**
  * About Component - Clean and focused professional background
@@ -18,7 +18,6 @@ const About = ({ darkMode }) => {
         {/* Section header */}
         <div className="about-header">
           <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">Full Stack Developer & Problem Solver</p>
         </div>
         
         {/* Main content container */}
@@ -43,7 +42,7 @@ const About = ({ darkMode }) => {
               <p className="intro-description">
                 A passionate <strong>Full Stack Developer</strong> specializing in the{' '}
                 <strong>MERN stack</strong> with expertise in building scalable web applications. 
-                Currently pursuing <strong>B.Tech in Information Technology</strong>, I combine 
+                Pursued <strong>B.Tech in Information Technology</strong>, I combine 
                 theoretical knowledge with practical implementation to deliver robust solutions.
               </p>
               
@@ -102,39 +101,65 @@ const About = ({ darkMode }) => {
               </div>
               <div className="stat-card">
                 <div className="stat-icon">💡</div>
-                <div className="stat-number">600+</div>
+                <div className="stat-number">800+</div>
                 <div className="stat-label">Problems Solved</div>
               </div>
             </div>
             
-            {/* Programming platform links */}
-            <div className="competitive-links">
-              <h5 className="links-title">Programming Profiles</h5>
-              <div className="links-grid">
-                <a 
-                  href="https://www.codechef.com/users/princekb" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="platform-link codechef"
-                >
-                  <i className="fas fa-trophy"></i>
-                  <span>CodeChef</span>
-                </a>
-                <a 
-                  href="https://leetcode.com/u/princekb/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="platform-link leetcode"
-                >
-                  {/* LeetCode SVG icon (theme blue, larger) */}
-                  <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '8px', verticalAlign: 'middle'}}>
-                    <path d="M19.5 36.5C15.5 32.5 15.5 24.5 19.5 20.5L28.5 11.5" stroke="#667eea" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M30.5 13.5L38.5 21.5C42.5 25.5 42.5 33.5 38.5 37.5C34.5 41.5 26.5 41.5 22.5 37.5" stroke="#667eea" strokeWidth="3" strokeLinecap="round"/>
-                    <circle cx="34" cy="25" r="3" fill="#667eea"/>
-                  </svg>
-                  <span>LeetCode</span>
-                </a>
+            {/* Profile cards row */}
+            <div className="profile-cards-row">
+
+              {/* Programming Profile */}
+              <div className="profile-type-card programming-card">
+                <p className="ptc-label">Programming<br/>Profile</p>
+                <div className="ptc-links">
+                  <a href="https://www.codechef.com/users/princekb" target="_blank" rel="noopener noreferrer" className="ptc-btn codechef-btn">
+                    <svg className="ptc-inline-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="50" cy="50" r="48" fill="#5B4638"/>
+                      <path d="M50 18c-6 0-11 4-13 9-3-1-6-1-8 1-4 3-4 9-1 13-3 3-4 8-2 12 2 5 7 8 12 8 1 3 3 6 5 8l7 7 7-7c2-2 4-5 5-8 5 0 10-3 12-8 2-4 1-9-2-12 3-4 3-10-1-13-2-2-5-2-8-1-2-5-7-9-13-9z" fill="#fff"/>
+                      <path d="M38 50c0-7 5-12 12-12s12 5 12 12-5 12-12 12-12-5-12-12z" fill="#5B4638"/>
+                      <circle cx="44" cy="47" r="2.5" fill="#fff"/>
+                      <circle cx="56" cy="47" r="2.5" fill="#fff"/>
+                    </svg>
+                    <span>CodeChef</span>
+                    <i className="fas fa-arrow-right ptc-arrow"></i>
+                  </a>
+                  <a href="https://leetcode.com/u/princekb/" target="_blank" rel="noopener noreferrer" className="ptc-btn leetcode-btn">
+                    <svg className="ptc-inline-logo" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="50" height="50" rx="8" fill="#FFA116"/>
+                      <path d="M15 32l8-8-8-8" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                      <line x1="24" y1="35" x2="36" y2="35" stroke="#fff" strokeWidth="3.5" strokeLinecap="round"/>
+                    </svg>
+                    <span>LeetCode</span>
+                    <i className="fas fa-arrow-right ptc-arrow"></i>
+                  </a>
+                </div>
               </div>
+
+              {/* Developer Profile */}
+              <div className="profile-type-card developer-card">
+                <p className="ptc-label">Developer<br/>Profile</p>
+                <div className="ptc-links">
+                  <a href="https://github.com/princekbarnwal" target="_blank" rel="noopener noreferrer" className="ptc-btn github-btn">
+                    <i className="fab fa-github ptc-inline-icon"></i>
+                    <span>GitHub</span>
+                    <i className="fas fa-arrow-right ptc-arrow"></i>
+                  </a>
+                </div>
+              </div>
+
+              {/* Professional Profile */}
+              <div className="profile-type-card professional-card">
+                <p className="ptc-label">Professional<br/>Profile</p>
+                <div className="ptc-links">
+                  <a href="https://www.linkedin.com/in/princekbarnwal" target="_blank" rel="noopener noreferrer" className="ptc-btn linkedin-btn">
+                    <i className="fab fa-linkedin ptc-inline-icon"></i>
+                    <span>LinkedIn</span>
+                    <i className="fas fa-arrow-right ptc-arrow"></i>
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

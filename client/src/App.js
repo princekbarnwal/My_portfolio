@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -80,6 +82,9 @@ function App() {
         {/* About section with personal information */}
         <About darkMode={darkMode} />
         
+        {/* Experience section with internship timeline */}
+        <Experience darkMode={darkMode} />
+        
         {/* Skills section with progress bars */}
         <Skills darkMode={darkMode} />
         
@@ -92,6 +97,9 @@ function App() {
       
       {/* Footer with social links and theme toggle */}
       <Footer darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+
+      {/* Vercel Analytics - tracks page views when deployed on Vercel */}
+      <Analytics />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './Hero.css';
+import profileImage from '../assets/image_1.png';
 
 /**
  * Hero Component - Main landing section
@@ -147,7 +148,7 @@ const Hero = ({ darkMode }) => {
         <div className="hero-visual">
           <div className="hero-avatar">
             <div className="avatar-placeholder">
-              <span>👨‍💻</span>
+              <span><img src={profileImage} alt="Prince Kumar Barnwal" /></span>
             </div>
             <div className="avatar-glow"></div>
           </div>
