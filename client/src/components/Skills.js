@@ -82,14 +82,25 @@ const Skills = ({ darkMode }) => {
 
     return () => observer.disconnect();
   }, []);
-
+const animateSkillsIn = useCallback((skills) => {
+    setDisplayedSkills([]);
+    
+    // Sort skills by percentage in descending order (highest to lowest)
+    const sortedSkills = [...skills].sort((a, b) => b.level - a.level);
+    
+    sortedSkills.forEach((skill, index) => {
+      setTimeout(() => {
+        setDisplayedSkills(prev => [...prev, skill]);
+      }, index * 150); // 150ms delay between each skill
+    });
+  }, []);
   // Initialize displayed skills when component becomes visible
   useEffect(() => {
-    if (isVisible) {
-      const allSkills = Object.values(skillsData).flat();
-      animateSkillsIn(allSkills);
-    }
-  }, [isVisible]);
+  if (isVisible) {
+    const allSkills = Object.values(skillsData).flat();
+    animateSkillsIn(allSkills);
+  }
+}, [isVisible, animateSkillsIn]);
 
   // Handle category changes with smooth transitions
   const handleCategoryChange = (categoryId) => {
@@ -115,18 +126,7 @@ const Skills = ({ darkMode }) => {
   };
 
   // Animate skills in with staggered delay
-  const animateSkillsIn = useCallback((skills) => {
-    setDisplayedSkills([]);
-    
-    // Sort skills by percentage in descending order (highest to lowest)
-    const sortedSkills = [...skills].sort((a, b) => b.level - a.level);
-    
-    sortedSkills.forEach((skill, index) => {
-      setTimeout(() => {
-        setDisplayedSkills(prev => [...prev, skill]);
-      }, index * 150); // 150ms delay between each skill
-    });
-  }, []);
+  
 
   /**
    * Renders a skill card with enhanced animations

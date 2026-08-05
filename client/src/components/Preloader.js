@@ -21,6 +21,10 @@ const centerY = 150;
 const totalCharacters = 21;
 const name = " Prince Kumar Barnwal ";
 
+const repeatedName = name
+  .repeat(Math.ceil(totalCharacters / name.length))
+  .slice(0, totalCharacters);
+
 const Preloader = ({ onComplete }) => {
 
   // State for tracking loading progress (0-100)
@@ -33,16 +37,12 @@ const Preloader = ({ onComplete }) => {
    * Effect to simulate smooth loading progress
    * Uses a simple linear progression for consistent, smooth animation
    */
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
   const duration = 3000;
   const interval = 30;
   const steps = duration / interval;
   const increment = 100 / steps;
-
-  // Move this inside the effect
-  const repeatedName = name
-    .repeat(Math.ceil(totalCharacters / name.length))
-    .slice(0, totalCharacters);
 
   let currentStep = 0;
 
