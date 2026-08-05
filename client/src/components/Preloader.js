@@ -20,7 +20,6 @@ const centerX = 150;
 const centerY = 150;
 const totalCharacters = 21;
 const name = " Prince Kumar Barnwal ";
-const repeatedName = name.repeat(Math.ceil(totalCharacters / name.length)).slice(0, totalCharacters);
 
 const Preloader = ({ onComplete }) => {
 
@@ -35,41 +34,42 @@ const Preloader = ({ onComplete }) => {
    * Uses a simple linear progression for consistent, smooth animation
    */
   useEffect(() => {
-    const duration = 3000; // Total loading time in milliseconds
-    const interval = 30; // Update interval in milliseconds
-    const steps = duration / interval; // Total number of steps
-    const increment = 100 / steps; // Progress increment per step
-    
-    let currentStep = 0;
-    
-    const timer = setInterval(() => {
-      currentStep++;
-      const newProgress = Math.min(currentStep * increment, 100);
-      setProgress(newProgress);
-      
-      // Calculate which characters should be visible
-      const newVisibleCharacters = new Set();
-      repeatedName.split('').forEach((char, index) => {
-        const progressThreshold = (index / totalCharacters) * 100;
-        if (newProgress >= progressThreshold) {
-          newVisibleCharacters.add(index);
-        }
-      });
-      
+  const duration = 3000;
+  const interval = 30;
+  const steps = duration / interval;
+  const increment = 100 / steps;
 
-      
-      setVisibleCharacters(newVisibleCharacters);
-      
-      if (newProgress >= 100) {
-        clearInterval(timer);
-        // Small delay before calling onComplete for smooth transition
-        setTimeout(() => onComplete && onComplete(), 500);
+  // Move this inside the effect
+  const repeatedName = name
+    .repeat(Math.ceil(totalCharacters / name.length))
+    .slice(0, totalCharacters);
+
+  let currentStep = 0;
+
+  const timer = setInterval(() => {
+    currentStep++;
+    const newProgress = Math.min(currentStep * increment, 100);
+    setProgress(newProgress);
+
+    const newVisibleCharacters = new Set();
+
+    repeatedName.split("").forEach((char, index) => {
+      const progressThreshold = (index / totalCharacters) * 100;
+      if (newProgress >= progressThreshold) {
+        newVisibleCharacters.add(index);
       }
-    }, interval);
-    
-    // Cleanup function to clear interval if component unmounts
-    return () => clearInterval(timer);
-  }, [onComplete, totalCharacters]);
+    });
+
+    setVisibleCharacters(newVisibleCharacters);
+
+    if (newProgress >= 100) {
+      clearInterval(timer);
+      setTimeout(() => onComplete?.(), 500);
+    }
+  }, interval);
+
+  return () => clearInterval(timer);
+}, [onComplete]);
 
   return (
     <div className="preloader-bg">

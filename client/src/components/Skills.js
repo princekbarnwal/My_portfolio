@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './Skills.css';
 
 /**
@@ -115,7 +115,7 @@ const Skills = ({ darkMode }) => {
   };
 
   // Animate skills in with staggered delay
-  const animateSkillsIn = (skills) => {
+  const animateSkillsIn = useCallback((skills) => {
     setDisplayedSkills([]);
     
     // Sort skills by percentage in descending order (highest to lowest)
@@ -126,7 +126,7 @@ const Skills = ({ darkMode }) => {
         setDisplayedSkills(prev => [...prev, skill]);
       }, index * 150); // 150ms delay between each skill
     });
-  };
+  }, []);
 
   /**
    * Renders a skill card with enhanced animations
