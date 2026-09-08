@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import portfolioImg from '../assets/Screenshot 2025-07-11 040831.png';
 import pokemonImg from '../assets/pokemon_site_img.png';
+import productCatalogImg from '../assets/product.png';
 import './Projects.css';
 
 /**
@@ -58,6 +59,29 @@ const Projects = ({ darkMode }) => {
       category: 'Full Stack',
       difficulty: 'Expert',
       completion: '100%'
+    },
+    {
+      id: 3,
+      title: 'Product Catalog Service',
+      description: 'A production-oriented REST API for managing a product catalog, built with Node.js and Express. The application uses a MongoDB 3-node replica set for high availability, Redis caching for improved performance, Docker for containerization, Jest and Supertest for testing, and GitHub Actions for CI/CD automation.',
+      technologies: ['Node.js', 'Express.js', 'MongoDB', 'Redis', 'Docker', 'Jest', 'Supertest', 'GitHub Actions', 'REST API'],
+      image: productCatalogImg,
+      github: 'https://github.com/princekbarnwal/Product_catalog_service',
+      live: 'https://product-catalog-service-tfcn.onrender.com/products',
+      features: [
+        'Full CRUD REST API for managing products',
+        'Clean layered architecture using routes, controllers, services, and models',
+        'MongoDB 3-node replica set with tested failover for high availability',
+        'Redis caching using the cache-aside pattern',
+        'Docker Compose containerization',
+        'Automated API testing with Jest and Supertest',
+        'CI/CD pipeline using GitHub Actions',
+        'Production-focused backend architecture'
+      ],
+      category: 'Backend',
+      difficulty: 'Expert',
+      completion: '100%',
+      liveLabel: 'Live API'
     }
   ];
 
@@ -221,7 +245,7 @@ const Projects = ({ darkMode }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="action-btn live-btn"
-                  title="Live Demo"
+                  title={project.liveLabel || 'Live Demo'}
                 >
                   <i className="fas fa-external-link-alt"></i>
                 </a>
@@ -329,7 +353,7 @@ const Projects = ({ darkMode }) => {
                     className="link-btn live-link"
                   >
                     <i className="fas fa-external-link-alt"></i>
-                    <span>Live Demo</span>
+                    <span>{selectedProject.liveLabel || 'Live Demo'}</span>
                   </a>
                 </div>
               </div>

@@ -74,6 +74,7 @@
 
 .project-showcase-card:nth-child(1) { animation-delay: 0.3s; }
 .project-showcase-card:nth-child(2) { animation-delay: 0.6s; }
+.project-showcase-card:nth-child(3) { animation-delay: 0.9s; }
 
 @keyframes cardEntrance {
   to {
