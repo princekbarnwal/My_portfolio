@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import portfolioImg from '../assets/Screenshot 2025-07-11 040831.png';
 import pokemonImg from '../assets/pokemon_site_img.png';
 import productCatalogImg from '../assets/product.png';
+import codeblogsImg from "../assets/codeblogs_home.png";
 import './Projects.css';
 
 /**
@@ -45,7 +46,7 @@ const Projects = ({ darkMode }) => {
       id: 2,
       title: 'Pokémon App',
       description: 'A comprehensive Pokémon application built with React and Node.js. Features include Pokémon search, detailed information, battle statistics, and a user-friendly interface. Integrated with PokeAPI for real-time data.',
-      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'REST API'],
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Express.js', 'REST API',  'Responsive Design'],
       image: pokemonImg,
       github: 'https://github.com/princekbarnwal/Pokemon_webapp',
       live: 'https://pokemonwebapp-princekbarnwal.vercel.app/',
@@ -82,6 +83,29 @@ const Projects = ({ darkMode }) => {
       difficulty: 'Expert',
       completion: '100%',
       liveLabel: 'Live API'
+    },
+    {
+      id: 4,
+      title: 'Codeblogs',
+      description: 'A full-stack blogging platform with secure JWT authentication, rich-text content creation, and performance-optimized caching. Built with Express 5 and Mongoose on the backend and React + Vite on the frontend, featuring token rotation, content sanitization, and a cache-aside Redis layer.',
+      technologies: ['Node.js', 'Express.js', 'MongoDB', 'Redis', 'React', 'Vite', 'JWT', 'Docker', 'Jest', 'Supertest'],
+      image: codeblogsImg,
+      github: 'https://github.com/princekbarnwal/Codeblogs',
+      live: '',
+      features: [
+        'JWT access + refresh token flow with rotation and logout-based revocation',
+        'Rich-text blog editor (Tiptap) with sanitize-html for safe content rendering',
+        'Zod schema validation, Helmet, and express-rate-limit for API security',
+        'Redis caching using the cache-aside pattern with write-invalidation',
+        'Docker Compose containerization for local Redis and MongoDB',
+        'Automated backend testing with Jest and Supertest',
+        'React + Vite frontend with dark mode and ownership-based access control',
+        'Anonymous and authenticated blog posting support'
+      ],
+      category: 'Full-Stack',
+      difficulty: 'Expert',
+      completion: '90%',
+      liveLabel: 'Not Deployed'
     }
   ];
 

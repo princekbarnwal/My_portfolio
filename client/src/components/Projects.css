@@ -229,6 +229,7 @@
   margin-bottom: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -941,6 +942,7 @@
     line-height: 1.4;
     margin-bottom: 1rem;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
   }
   
   .tech-stack {
@@ -1042,6 +1044,7 @@
     line-height: 1.3;
     margin-bottom: 0.75rem;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
   
   .tech-stack {
